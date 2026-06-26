@@ -1,26 +1,184 @@
 @import "tailwindcss";
 
+@theme {
+  --color-royal-navy: #0b2348;
+  --color-warm-ivory: #f8f5ef;
+  --color-pure-white: #ffffff;
+  --color-soft-cream: #faf7f2;
+  --color-deep-navy: #081a38;
+  --color-luxury-gold: #d4af37;
+  --color-border-luxury: #e5d7b2;
+
+  --color-primary: #0b2348;
+  --color-secondary: #d4af37;
+  --color-background: #f8f5ef;
+  --color-card: #ffffff;
+  --color-accent: #e8c07d;
+  --color-text: #0b2348;
+  --color-subtext: #4a5568;
+  --color-success: #16a34a;
+  --color-border: #e5d7b2;
+
+  --radius-luxury: 1.5rem;
+}
+
+/* ============================================================
+   PROPORTIONAL SCALING — Desktop only (1024px+)
+   Mobile (< 1024px): stays at 16px, layout via Tailwind classes
+   ============================================================ */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 1919px) and (min-width: 1536px) {
+  html { font-size: 14.4px; }
+}
+@media (max-width: 1535px) and (min-width: 1440px) {
+  html { font-size: 14.08px; }
+}
+@media (max-width: 1439px) and (min-width: 1366px) {
+  html { font-size: 13.6px; }
+}
+@media (max-width: 1365px) and (min-width: 1280px) {
+  html { font-size: 13.12px; }
+}
+@media (max-width: 1279px) and (min-width: 1024px) {
+  html { font-size: 12.48px; }
+}
+@media (max-width: 1023px) {
+  html { font-size: 16px; }
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8f5ef;
+  --foreground: #0b2348;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  position: relative;
 }
 
 body {
+  overflow-x: hidden;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* ============================================================
+   UTILITY CLASSES — NO @media inside here (Tailwind v4 rule)
+   ============================================================ */
+@layer utilities {
+  .glassmorphism {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)];
+  }
+
+  .glassmorphism-dark {
+    @apply bg-black/40 backdrop-blur-md border border-[var(--color-border-luxury)]/20 shadow-[0_8px_30px_rgb(0,0,0,0.1)];
+  }
+
+  .shadow-soft {
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+  }
+
+  .shadow-soft-hover {
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.12);
+  }
+
+  .section-py {
+    padding-top:    clamp(3rem, 6vw, 7rem);
+    padding-bottom: clamp(3rem, 6vw, 7rem);
+  }
+
+  .text-fluid-hero {
+    font-size: clamp(2rem, 5vw, 5.5rem);
+    line-height: 1.1;
+  }
+
+  .text-fluid-title {
+    font-size: clamp(1.6rem, 3vw, 3.5rem);
+    line-height: 1.2;
+  }
+
+  .text-fluid-body {
+    font-size: clamp(0.9rem, 1.1vw, 1.2rem);
+    line-height: 1.7;
+  }
+
+  .luxury-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left:  clamp(1rem, 5vw, 4rem);
+    padding-right: clamp(1rem, 5vw, 4rem);
+    max-width: 90rem;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ============================================================
+   LUXURY-CONTAINER WIDE SCREEN OVERRIDES
+   (must be OUTSIDE @layer to support @media in Tailwind v4)
+   ============================================================ */
+@media (min-width: 1920px) {
+  .luxury-container { max-width: 110rem; }
+}
+@media (min-width: 2560px) {
+  .luxury-container { max-width: 140rem; }
+}
+
+/* Carousel Left Alignment to match luxury-container */
+.carousel-align-left {
+  padding-left: clamp(1rem, 5vw, 4rem);
+}
+@media (min-width: 1440px) {
+  .carousel-align-left {
+    padding-left: calc((100vw - 90rem) / 2 + clamp(1rem, 5vw, 4rem));
+  }
+}
+@media (min-width: 1920px) {
+  .carousel-align-left {
+    padding-left: calc((100vw - 110rem) / 2 + clamp(1rem, 5vw, 4rem));
+  }
+}
+@media (min-width: 2560px) {
+  .carousel-align-left {
+    padding-left: calc((100vw - 140rem) / 2 + clamp(1rem, 5vw, 4rem));
+  }
+}
+
+/* ============================================================
+   GLOBAL SCROLLBAR HIDE
+   ============================================================ */
+*,
+*::before,
+*::after {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* ============================================================
+   SWIPER STYLES
+   ============================================================ */
+.swiper-pagination-bullet        { background: #c8a96a !important; opacity: .5; }
+.swiper-pagination-bullet-active { background: #c8a96a !important; opacity: 1; }
+.swiper-button-next,
+.swiper-button-prev              { color: #c8a96a !important; }
