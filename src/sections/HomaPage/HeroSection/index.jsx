@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Search, MapPin, Utensils } from "lucide-react";
 import Button from "@/components/ui/Button";
+import Image from "next/image";
 
 export default function HeroSection() {
   const router = useRouter();
@@ -31,10 +32,15 @@ export default function HeroSection() {
   return (
     <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
       {/* Background Image with Dark Overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center z-0"
-        style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=80")' }}
-      >
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4"
+          alt="Luxury dining atmosphere"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
         <div className="absolute inset-0 bg-black/60" />
       </div>
 

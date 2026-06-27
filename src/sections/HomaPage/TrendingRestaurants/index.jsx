@@ -26,11 +26,13 @@ export default function TrendingRestaurants() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    let ctx = gsap.context(() => {
+    const mm = gsap.matchMedia();
+
+    // Only apply horizontal scroll-pinning on desktop viewports (1024px and up)
+    mm.add("(min-width: 1024px)", () => {
       const pinWrap = pinWrapRef.current;
       if (!pinWrap) return;
 
-      // How far we need to scroll horizontally
       const horizontalScrollLength = pinWrap.scrollWidth - window.innerWidth;
 
       gsap.to(pinWrap, {
@@ -47,13 +49,13 @@ export default function TrendingRestaurants() {
           invalidateOnRefresh: true,
         },
       });
-    }, sectionRef);
+    });
 
     const handleResize = () => ScrollTrigger.refresh();
     window.addEventListener("resize", handleResize);
 
     return () => {
-      ctx.revert();
+      mm.revert();
       window.removeEventListener("resize", handleResize);
     };
   }, []);
@@ -84,7 +86,7 @@ export default function TrendingRestaurants() {
         </div>
 
         {/* Horizontally sliding cards row */}
-        <div className="w-full overflow-hidden">
+        <div className="w-full overflow-x-auto lg:overflow-x-hidden scrollbar-hide scroll-smooth snap-x snap-mandatory">
           <div
             ref={pinWrapRef}
             className="pin-wrap flex justify-start items-center w-max carousel-align-left pr-[10vw]"
@@ -93,7 +95,7 @@ export default function TrendingRestaurants() {
             {restaurants.map((restaurant) => (
               <div
                 key={restaurant.id}
-                className="w-[78vw] sm:w-[60vw] md:w-[42vw] lg:w-[30vw] xl:w-[28vw] max-w-[420px] shrink-0 h-[58vh] max-h-[520px] min-h-[360px] mr-4 md:mr-6 lg:mr-8"
+                className="w-[78vw] sm:w-[60vw] md:w-[42vw] lg:w-[30vw] xl:w-[28vw] max-w-[420px] shrink-0 h-[58vh] max-h-[520px] min-h-[360px] mr-4 md:mr-6 lg:mr-8 snap-center snap-always"
               >
                 <Card className="h-full flex flex-col group bg-white shadow-soft">
                   {/* Image */}
