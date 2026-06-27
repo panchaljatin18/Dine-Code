@@ -1,4 +1,5 @@
 import { Playfair_Display, Inter } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
@@ -38,6 +39,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
