@@ -15,8 +15,12 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Transparent until scroll on all pages except light-background text pages (like privacy policy, terms)
-  const isLightPage = pathname && (pathname.startsWith("/privacypolicy") || pathname.startsWith("/termsofservice"));
+  const isLightPage = pathname && (
+    pathname.startsWith("/privacypolicy") || 
+    pathname.startsWith("/termsofservice") ||
+    pathname.startsWith("/login") ||
+    pathname.startsWith("/signup")
+  );
   const isTransparent = !isLightPage && !isScrolled;
 
   useEffect(() => {
@@ -102,14 +106,19 @@ export default function Navbar() {
 
           {/* Desktop Sign In */}
           <div className="hidden lg:flex items-center">
-            <Button
-              variant="glass"
-              size="sm"
-              className="rounded-full"
+            <Link 
+              href="/login" 
+              className={["/login", "/signup"].includes(pathname) ? "invisible pointer-events-none" : ""}
             >
-              <User className="w-4 h-4 mr-2" />
-              Sign In
-            </Button>
+              <Button
+                variant="glass"
+                size="sm"
+                className="rounded-full"
+              >
+                <User className="w-4 h-4 mr-2" />
+                Sign In
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile / Tablet Hamburger */}
@@ -196,15 +205,19 @@ export default function Navbar() {
               </nav>
 
               {/* Panel Footer */}
-              <div className="p-5 border-t border-white/10">
-                <Button
-                  variant="secondary"
-                  className="w-full justify-center"
-                >
-                  <User className="w-4 h-4 mr-2" />
-                  Sign In
-                </Button>
-              </div>
+              {!["/login", "/signup"].includes(pathname) && (
+                <div className="p-5 border-t border-white/10">
+                  <Link href="/login" onClick={() => setIsMobileMenuOpen(false)} className="w-full block">
+                    <Button
+                      variant="secondary"
+                      className="w-full justify-center"
+                    >
+                      <User className="w-4 h-4 mr-2" />
+                      Sign In
+                    </Button>
+                  </Link>
+                </div>
+              )}
             </motion.div>
           </>
         )}

@@ -34,17 +34,18 @@ export default function TrendingRestaurants() {
       const horizontalScrollLength = pinWrap.scrollWidth - window.innerWidth;
 
       gsap.to(pinWrap, {
+        x: -horizontalScrollLength,
+        ease: "none",
+        force3D: true,
         scrollTrigger: {
           trigger: sectionRef.current,
           pin: true,
-          scrub: 1,
+          scrub: 1.5,
           start: "top top",
           end: () => `+=${horizontalScrollLength}`,
           anticipatePin: 1,
           invalidateOnRefresh: true,
         },
-        x: -horizontalScrollLength,
-        ease: "none",
       });
     }, sectionRef);
 
@@ -87,6 +88,7 @@ export default function TrendingRestaurants() {
           <div
             ref={pinWrapRef}
             className="pin-wrap flex justify-start items-center w-max carousel-align-left pr-[10vw]"
+            style={{ willChange: "transform" }}
           >
             {restaurants.map((restaurant) => (
               <div
@@ -133,7 +135,7 @@ export default function TrendingRestaurants() {
                       >
                         Quick View
                       </Button>
-                      <Link href={`/discover/${restaurant.slug}`} className="flex-1">
+                      <Link href={`/discover/${restaurant.slug}?from=home`} className="flex-1">
                         <Button className="w-full text-xs md:text-sm px-2 py-2 shadow-soft hover:shadow-soft-hover transition-all whitespace-nowrap">
                           View Details
                         </Button>
@@ -212,7 +214,7 @@ export default function TrendingRestaurants() {
                   <p className="text-sm text-gray-500 mb-1">Average Cost</p>
                   <p className="text-xl font-bold text-gray-900">{quickViewRestaurant.priceForTwo} <span className="text-sm font-normal text-gray-500">for two</span></p>
                 </div>
-                <Link href={`/discover/${quickViewRestaurant.slug}`} className="flex-1">
+                <Link href={`/discover/${quickViewRestaurant.slug}?from=home`} className="flex-1">
                   <Button className="w-full h-full text-lg">Book a Table</Button>
                 </Link>
               </div>

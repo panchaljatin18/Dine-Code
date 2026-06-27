@@ -22,8 +22,10 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function RestaurantDetailPage({ params }) {
+export default async function RestaurantDetailPage({ params, searchParams }) {
   const { slug } = await params;
+  const resolvedSearchParams = await searchParams;
+  const fromPage = resolvedSearchParams?.from || "discover";
   const restaurant = restaurants.find(r => r.slug === slug);
 
   if (!restaurant) {
@@ -52,9 +54,14 @@ export default async function RestaurantDetailPage({ params }) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
         
         <div className="absolute top-40 left-8 md:left-12 z-10">
-          <Link href="/discover" className="flex items-center text-white/80 hover:text-white transition-colors bg-black/40 hover:bg-black/60 backdrop-blur-md px-5 py-2.5 rounded-full shadow-lg">
+          <Link 
+            href={fromPage === "home" ? "/" : "/discover"} 
+            className="flex items-center text-white/80 hover:text-white transition-colors bg-black/40 hover:bg-black/60 backdrop-blur-md px-5 py-2.5 rounded-full shadow-lg"
+          >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            <span className="font-medium">Back to Discover</span>
+            <span className="font-medium">
+              {fromPage === "home" ? "Back to Home" : "Back to Discover"}
+            </span>
           </Link>
         </div>
 

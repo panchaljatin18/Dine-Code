@@ -137,9 +137,9 @@ function RestaurantGridContent() {
                         >
                           Quick View
                         </Button>
-                        <Link href={`/discover/${restaurant.slug}`} className="flex-1">
-                          <Button className="w-full whitespace-nowrap text-[13px] md:text-sm px-1 py-2.5 w-full h-full">View Details</Button>
-                        </Link>
+                        <Link href={`/discover/${restaurant.slug}?from=discover`} className="flex-1">
+                           <Button className="w-full whitespace-nowrap text-[13px] md:text-sm px-1 py-2.5 w-full h-full">View Details</Button>
+                         </Link>
                       </div>
                     </div>
                   </Card>
@@ -232,7 +232,7 @@ function RestaurantGridContent() {
                   <p className="text-sm text-gray-500 mb-1">Average Cost</p>
                   <p className="text-xl font-bold text-gray-900">{quickViewRestaurant.priceForTwo} <span className="text-sm font-normal text-gray-500">for two</span></p>
                 </div>
-                <Link href={`/discover/${quickViewRestaurant.slug}`} className="flex-1">
+                 <Link href={`/discover/${quickViewRestaurant.slug}?from=discover`} className="flex-1">
                   <Button className="w-full h-full text-lg">Book a Table</Button>
                 </Link>
               </div>
