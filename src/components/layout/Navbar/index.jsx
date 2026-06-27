@@ -16,7 +16,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const isLightPage = pathname && (
-    pathname.startsWith("/privacypolicy") || 
+    pathname.startsWith("/privacypolicy") ||
     pathname.startsWith("/termsofservice") ||
     pathname.startsWith("/login") ||
     pathname.startsWith("/signup")
@@ -49,6 +49,7 @@ export default function Navbar() {
     { name: "Blog", href: "/blog" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
+    { name: "Login", href: "/login" },
   ];
 
   const isActive = (href) => {
@@ -106,8 +107,8 @@ export default function Navbar() {
 
           {/* Desktop Sign In */}
           <div className="hidden lg:flex items-center">
-            <Link 
-              href="/login" 
+            <Link
+              href="/login"
               className={["/login", "/signup"].includes(pathname) ? "invisible pointer-events-none" : ""}
             >
               <Button
