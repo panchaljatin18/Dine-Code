@@ -17,7 +17,7 @@ export default async function BlogPostPage({ params }) {
       {/* Article Hero */}
       <div className="relative h-[60vh] min-h-[500px] w-full pt-20">
         <Image 
-          src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1920&q=80"
+          src="/assets/cover image.webp"
           alt={title}
           fill
           priority
@@ -101,7 +101,7 @@ export default async function BlogPostPage({ params }) {
 
           <div className="my-12 relative h-96 w-full rounded-2xl overflow-hidden shadow-2xl">
             <Image 
-              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80"
+              src="/assets/rest.webp"
               alt="Fine dining presentation"
               fill
               className="object-cover"

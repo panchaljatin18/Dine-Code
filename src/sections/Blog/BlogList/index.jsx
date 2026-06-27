@@ -15,7 +15,7 @@ export default function BlogList() {
       title: "The Rise of Molecular Gastronomy in Ahmedabad",
       category: "Trends",
       date: "Oct 12, 2026",
-      image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80",
+      image: "/assets/cover image.webp",
       excerpt: "Explore how local chefs are bringing science into the kitchen to create mind-bending culinary experiences."
     },
     {
@@ -24,7 +24,7 @@ export default function BlogList() {
       title: "Top 5 Romantic Rooftop Restaurants for Anniversary",
       category: "Guides",
       date: "Oct 08, 2026",
-      image: "https://images.unsplash.com/photo-1544148103-0773bf10d330?w=800&q=80",
+      image: "/assets/website1.webp",
       excerpt: "Planning a special evening? We have curated the most romantic spots with breathtaking city views."
     },
     {
@@ -33,7 +33,7 @@ export default function BlogList() {
       title: "Decoding the Perfect Wine Pairing for Indian Cuisine",
       category: "Education",
       date: "Sep 28, 2026",
-      image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80",
+      image: "/assets/photo2.webp",
       excerpt: "A sommelier's guide to pairing rich, spicy Indian curries with the perfect glass of wine."
     },
     {
@@ -42,7 +42,7 @@ export default function BlogList() {
       title: "Heritage Dining: Restaurants in Century-Old Havelis",
       category: "Culture",
       date: "Sep 15, 2026",
-      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+      image: "/assets/photo3.webp",
       excerpt: "Step back in time and dine like royalty in restored heritage properties across the old city."
     }
   ];

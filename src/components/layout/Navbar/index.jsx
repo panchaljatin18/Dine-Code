@@ -76,7 +76,6 @@ export default function Navbar() {
               height={1000}
               className="object-contain w-auto h-9 sm:h-10 md:h-12 transition-all duration-300"
               priority
-              unoptimized
             />
           </Link>
 
@@ -168,7 +167,6 @@ export default function Navbar() {
                   width={200}
                   height={60}
                   className="h-8 w-auto object-contain"
-                  unoptimized
                 />
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}

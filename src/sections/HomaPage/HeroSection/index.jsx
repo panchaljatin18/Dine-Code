@@ -34,7 +34,7 @@ export default function HeroSection() {
       {/* Background Image with Dark Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4"
+          src="/assets/photo3.webp"
           alt="Luxury dining atmosphere"
           fill
           priority

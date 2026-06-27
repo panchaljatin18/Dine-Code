@@ -8,9 +8,9 @@ import { Star } from "lucide-react";
 export default function MainContent() {
   const areaName = "All Areas";
   const restaurants = [
-    { id: 1, name: "The Royal Symphony", cuisine: "North Indian", rating: 4.8, image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&q=80" },
-    { id: 2, name: "Cloud 9 Rooftop", cuisine: "Continental", rating: 4.6, image: "https://images.unsplash.com/photo-1544148103-0773bf10d330?w=800&q=80" },
-    { id: 3, name: "Elysium Dining", cuisine: "Modern Indian", rating: 4.9, image: "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=800&q=80" },
+    { id: 1, name: "The Royal Symphony", cuisine: "North Indian", rating: 4.8, image: "/assets/website.webp" },
+    { id: 2, name: "Cloud 9 Rooftop", cuisine: "Continental", rating: 4.6, image: "/assets/website1.webp" },
+    { id: 3, name: "Elysium Dining", cuisine: "Modern Indian", rating: 4.9, image: "/assets/restimage.webp" },
   ];
 
   return (

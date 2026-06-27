@@ -14,9 +14,9 @@ export default function StorySection() {
             viewport={{ once: true }}
             className="relative h-[600px] rounded-[var(--radius-luxury)] overflow-hidden"
           >
-            <Image 
-              src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1200&q=80" 
-              alt="DINECODE Team" 
+            <Image
+              src="/assets/restimage.webp"
+              alt="DINECODE Team"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"

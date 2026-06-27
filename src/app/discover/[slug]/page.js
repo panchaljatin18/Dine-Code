@@ -175,7 +175,7 @@ export default async function RestaurantDetailPage({ params, searchParams }) {
               </div>
 
               <div className="bg-black text-white p-8 rounded-2xl text-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=800&q=80')] opacity-20 bg-cover bg-center" />
+                <div className="absolute inset-0 bg-[url('/assets/restimage.webp')] opacity-20 bg-cover bg-center" />
                 <div className="relative z-10">
                   <Calendar className="w-8 h-8 mx-auto mb-4 text-[var(--color-secondary)]" />
                   <h3 className="font-playfair text-2xl font-bold mb-2">Reserve Your Table</h3>

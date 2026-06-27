@@ -16,19 +16,19 @@ export default function Testimonials() {
       name: "Aarav Patel",
       role: "Food Enthusiast",
       content: "DINECODE has completely changed how I discover luxury dining in Ahmedabad. The recommendations are always spot on and the booking process is seamless.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80"
+      image: "/assets/small.webp"
     },
     {
       name: "Priya Sharma",
       role: "Lifestyle Blogger",
       content: "The curated lists for romantic dinners and rooftop cafes are incredible. It feels like having a personal luxury concierge in my pocket.",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80"
+      image: "/assets/small1.webp"
     },
     {
       name: "Vikram Desai",
       role: "Business Executive",
       content: "When hosting clients, I only trust DINECODE to find the finest fine-dining establishments. Their top-rated section has never disappointed me.",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&q=80"
+      image: "/assets/small2.webp"
     }
   ];
 
