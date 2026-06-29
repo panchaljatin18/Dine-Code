@@ -64,13 +64,13 @@ export default function TrendingRestaurants() {
     <div className="gsap-scroll-trigger-wrapper">
       {/* Outer div is the GSAP pin target — NOT the section itself */}
       <div ref={sectionRef} id="sectionPin">
-        <section className="h-screen overflow-hidden bg-[var(--color-primary)] flex flex-col justify-center">
+        <section className="min-h-screen overflow-hidden bg-[var(--color-primary)] flex flex-col justify-center">
         {/* Header */}
-        <div className="w-full z-10 mb-6 md:mb-10">
+        <div className="w-full z-10 mb-6 md:mb-15">
           <div className="luxury-container w-full">
             <div className="flex flex-row justify-between items-end">
               <div>
-                <h2 className="font-playfair text-fluid-title font-bold text-white mb-3 md:mb-4">
+                <h2 className="font-playfair text-fluid-title font-bold text-white mb-3 md:mb-6">
                   Trending Now
                 </h2>
                 <div className="w-20 md:w-24 h-1 bg-[var(--color-secondary)]" />

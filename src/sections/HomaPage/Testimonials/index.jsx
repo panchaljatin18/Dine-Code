@@ -33,7 +33,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="section-py bg-[var(--color-card)]">
+    <section id="testimonialsSection" className="section-py bg-[var(--color-card)]">
       <div className="luxury-container">
         <div className="text-center mb-16">
           <motion.h2

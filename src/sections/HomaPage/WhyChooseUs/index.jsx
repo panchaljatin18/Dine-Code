@@ -34,7 +34,7 @@ export default function WhyChooseUs() {
   };
 
   return (
-    <section className="section-py bg-[var(--color-primary)]">
+    <section id="whyChooseUsSection" className="section-py bg-[var(--color-primary)]">
       <div className="luxury-container">
         <div className="text-center mb-16">
           <motion.h2

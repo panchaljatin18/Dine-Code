@@ -15,13 +15,15 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const isLightPage = pathname && (
+  const isSolidNavbarPage = pathname && (
     pathname.startsWith("/privacypolicy") ||
     pathname.startsWith("/termsofservice") ||
     pathname.startsWith("/login") ||
-    pathname.startsWith("/signup")
+    pathname.startsWith("/signup") ||
+    pathname.includes("/discover/") ||
+    pathname.includes("/blog/")
   );
-  const isTransparent = !isLightPage && !isScrolled;
+  const isTransparent = !isSolidNavbarPage && !isScrolled;
 
   useEffect(() => {
     const handleScroll = () => {

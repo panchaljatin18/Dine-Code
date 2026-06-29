@@ -20,7 +20,7 @@ export const metadata = {
   title: "DINECODE | Ahmedabad's Luxury Dining Guide",
   description: "Discover Ahmedabad's finest dining experiences. Explore luxury restaurants, cafés, rooftop dining, romantic places, and hidden food gems.",
   icons: {
-    icon: '/assets/logoo.ico',
+    icon: '/favicon.ico',
   },
 };
 

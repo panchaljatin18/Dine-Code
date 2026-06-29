@@ -31,22 +31,34 @@ html {
 }
 
 @media (max-width: 1919px) and (min-width: 1536px) {
-  html { font-size: 14.4px; }
+  html {
+    font-size: 14.4px;
+  }
 }
 @media (max-width: 1535px) and (min-width: 1440px) {
-  html { font-size: 14.08px; }
+  html {
+    font-size: 14.08px;
+  }
 }
 @media (max-width: 1439px) and (min-width: 1366px) {
-  html { font-size: 13.6px; }
+  html {
+    font-size: 13.6px;
+  }
 }
 @media (max-width: 1365px) and (min-width: 1280px) {
-  html { font-size: 13.12px; }
+  html {
+    font-size: 13.12px;
+  }
 }
 @media (max-width: 1279px) and (min-width: 1024px) {
-  html { font-size: 12.48px; }
+  html {
+    font-size: 12.48px;
+  }
 }
 @media (max-width: 1023px) {
-  html { font-size: 16px; }
+  html {
+    font-size: 16px;
+  }
 }
 
 /* ============================================================
@@ -91,7 +103,7 @@ body {
   }
 
   .section-py {
-    padding-top:    clamp(3rem, 6vw, 7rem);
+    padding-top: clamp(3rem, 6vw, 7rem);
     padding-bottom: clamp(3rem, 6vw, 7rem);
   }
 
@@ -114,7 +126,7 @@ body {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left:  clamp(1rem, 5vw, 4rem);
+    padding-left: clamp(1rem, 5vw, 4rem);
     padding-right: clamp(1rem, 5vw, 4rem);
     max-width: 90rem;
   }
@@ -133,11 +145,225 @@ body {
    LUXURY-CONTAINER WIDE SCREEN OVERRIDES
    (must be OUTSIDE @layer to support @media in Tailwind v4)
    ============================================================ */
-@media (min-width: 1920px) {
-  .luxury-container { max-width: 110rem; }
+@media (min-width: 1024px) {
+  #sectionPin section {
+    min-height: 88vh;
+    justify-content: flex-start;
+    padding-top: calc(90px + 3vh);
+  }
+
+  #sectionPin .pin-wrap > div {
+    max-height: 480px;
+  }
 }
+
+@media (min-width: 1920px) {
+  .luxury-container {
+    max-width: 110rem;
+  }
+}
+
 @media (min-width: 2560px) {
-  .luxury-container { max-width: 140rem; }
+  .luxury-container {
+    max-width: 140rem;
+  }
+
+  #sectionPin section {
+    min-height: 80vh;
+    padding-top: 10vh;
+  }
+
+  /* Exclusive Dining Privileges section overrides for 2560px wide screens */
+  #offersSection {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  #offersSection > div > div {
+    border-radius: 48px;
+    padding: 6rem;
+    gap: 4rem;
+  }
+
+  #offersSection h2 {
+    font-size: 3.75rem; /* text-6xl */
+    line-height: 1.15;
+    margin-bottom: 2rem;
+  }
+
+  #offersSection p {
+    font-size: 1.25rem; /* text-xl */
+    margin-bottom: 2.5rem;
+   }
+
+  #offersSection button {
+    height: 3.5rem !important; /* h-14 */
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+    font-size: 1.125rem !important; /* text-lg */
+  }
+
+  #offersSection .grid {
+    gap: 2rem;
+  }
+
+  #offersSection .grid > div {
+    border-radius: 32px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    transition: transform 0.3s ease;
+  }
+
+  #offersSection .grid > div:hover {
+    transform: translateY(-5px);
+  }
+
+  #offersSection .grid > div div:first-child {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  #offersSection .grid > div div:first-child svg {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  #offersSection .grid > div h3 {
+    font-size: 1.5rem; /* text-2xl */
+    margin-bottom: 1rem;
+  }
+
+  #offersSection .grid > div p {
+    font-size: 1rem; /* text-base */
+    margin-bottom: 1.5rem;
+  }
+
+  #offersSection .grid > div div:last-child {
+    padding: 0.5rem 1.25rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+  }
+
+  /* Testimonials section overrides for 2560px wide screens */
+  #testimonialsSection {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  #testimonialsSection .text-center {
+    margin-bottom: 5rem;
+  }
+
+  #testimonialsSection h2 {
+    font-size: 3.75rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  #testimonialsSection h2 + div {
+    width: 8rem !important;
+  }
+
+  #testimonialsSection .swiper-slide > div {
+    padding: 3rem !important;
+    border-radius: 32px !important;
+  }
+
+  #testimonialsSection .swiper-slide svg.lucide-quote {
+    width: 4rem !important;
+    height: 4rem !important;
+    top: 2rem !important;
+    right: 2rem !important;
+  }
+
+  #testimonialsSection .swiper-slide > div > div:first-of-type {
+    margin-bottom: 2rem !important;
+  }
+
+  #testimonialsSection .swiper-slide > div > div:first-of-type svg {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+  }
+
+  #testimonialsSection .swiper-slide p {
+    font-size: 1.25rem !important;
+    margin-bottom: 2.5rem !important;
+  }
+
+  #testimonialsSection .swiper-slide > div > div:last-child {
+    margin-top: auto;
+  }
+
+  #testimonialsSection .swiper-slide > div > div:last-child > div:first-child {
+    width: 4rem !important;
+    height: 4rem !important;
+    margin-right: 1.5rem !important;
+  }
+
+  #testimonialsSection .swiper-slide h4 {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  #testimonialsSection .swiper-slide > div > div:last-child p {
+    font-size: 1rem !important;
+  }
+
+  /* Why Choose DINECODE section overrides for 2560px wide screens */
+  #whyChooseUsSection {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  #whyChooseUsSection .text-center {
+    margin-bottom: 5rem;
+  }
+
+  #whyChooseUsSection h2 {
+    font-size: 3.75rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  #whyChooseUsSection h2 + div {
+    width: 8rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  #whyChooseUsSection .text-center p {
+    font-size: 1.35rem !important;
+    max-width: 45rem !important;
+  }
+
+  #whyChooseUsSection .grid {
+    gap: 2rem !important;
+  }
+
+  #whyChooseUsSection .grid > div > div {
+    padding: 3rem 2.5rem !important;
+    border-radius: 24px !important;
+  }
+
+  #whyChooseUsSection .grid > div svg {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+  }
+
+  #whyChooseUsSection .grid > div > div > div:first-child {
+    margin-bottom: 2rem !important;
+  }
+
+  #whyChooseUsSection .grid h3 {
+    font-size: 1.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  #whyChooseUsSection .grid p {
+    font-size: 1.125rem !important;
+    line-height: 1.6 !important;
+  }
 }
 
 /* Carousel Left Alignment to match luxury-container */
@@ -178,7 +404,15 @@ body {
 /* ============================================================
    SWIPER STYLES
    ============================================================ */
-.swiper-pagination-bullet        { background: #c8a96a !important; opacity: .5; }
-.swiper-pagination-bullet-active { background: #c8a96a !important; opacity: 1; }
+.swiper-pagination-bullet {
+  background: #c8a96a !important;
+  opacity: 0.5;
+}
+.swiper-pagination-bullet-active {
+  background: #c8a96a !important;
+  opacity: 1;
+}
 .swiper-button-next,
-.swiper-button-prev              { color: #c8a96a !important; }
+.swiper-button-prev {
+  color: #c8a96a !important;
+}
