@@ -55,7 +55,7 @@ export default function Footer() {
           {/* Quick Links + Popular Areas — side-by-side on mobile, separate columns on sm+ */}
           <div className="grid grid-cols-2 sm:contents gap-6">
             {/* Quick Links */}
-            <div>
+            <div className="xl:pl-16">
               <h3 className="text-lg font-semibold mb-6 font-playfair tracking-wide">Quick Links</h3>
               <ul className="space-y-4">
                 {[
@@ -76,7 +76,7 @@ export default function Footer() {
             </div>
 
             {/* Popular Areas */}
-            <div>
+            <div className="xl:pl-14">
               <h3 className="text-lg font-semibold mb-6 font-playfair tracking-wide">Popular Areas</h3>
               <ul className="space-y-4">
                 {["SG Highway", "Sindhu Bhavan", "Bodakdev", "Satellite", "CG Road", "Prahlad Nagar"].map((item) => (

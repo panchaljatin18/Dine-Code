@@ -14,7 +14,7 @@ export default function MainContent() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-12">
+    <div id="areaMainContent" className="luxury-container pt-12 min-h-[60vh] md:min-h-[70vh] lg:min-h-[75vh]">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
         
         {/* Content */}

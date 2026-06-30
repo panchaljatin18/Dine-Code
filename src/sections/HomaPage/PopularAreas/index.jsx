@@ -19,7 +19,7 @@ export default function PopularAreas() {
     <div>
       {/* ── MOBILE / TABLET (< lg): Native touch snap scroll ── */}
       <div className="lg:hidden">
-        <section className="h-screen overflow-hidden bg-[var(--color-royal-navy)] flex flex-col justify-center">
+        <section className="min-h-screen overflow-hidden bg-[var(--color-royal-navy)] flex flex-col justify-center">
           {/* Header */}
           <div className="text-center mb-8 px-5">
             <h2 className="font-playfair text-fluid-title font-bold text-[var(--color-warm-ivory)] mb-3">
@@ -60,7 +60,7 @@ export default function PopularAreas() {
       </div>
 
       {/* ── DESKTOP (lg+): Static section with grid ── */}
-      <section className="hidden lg:block section-py bg-[var(--color-royal-navy)] overflow-hidden">
+      <section id="popularAreasSection" className="hidden min-h-screen lg:block flex flex-col justify-center section-py bg-[var(--color-royal-navy)] overflow-hidden">
         <div className="luxury-container">
           <div className="text-center mb-16">
             <motion.h2

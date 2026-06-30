@@ -121,7 +121,7 @@ export default function AuthPage({ initialMode = "login" }) {
             {/* Inspirational Content */}
             <div className="space-y-5">
               <span className="inline-block px-3 py-1 rounded-full border border-[var(--color-luxury-gold)]/40 bg-[var(--color-luxury-gold)]/10 text-[var(--color-luxury-gold)] text-xs font-semibold tracking-wider uppercase">
-                Curated Dining Guide
+                Premium Dining Guide
               </span>
               <h1 className="font-playfair text-3xl xl:text-4xl font-bold text-white leading-tight">
                 A Taste of <br />

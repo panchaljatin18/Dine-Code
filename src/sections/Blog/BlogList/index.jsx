@@ -48,7 +48,7 @@ export default function BlogList() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-16">
+    <div id="blogListSection" className="luxury-container pt-16 min-h-[60vh] md:min-h-[70vh] lg:min-h-[75vh]">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
         
         {/* Main Blog List */}

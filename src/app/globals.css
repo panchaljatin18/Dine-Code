@@ -153,13 +153,42 @@ body {
   }
 
   #sectionPin .pin-wrap > div {
-    max-height: 480px;
+    max-height: 500px;
+  }
+
+  #collectionsSection .grid > div {
+    height: 42vh !important;
+    min-height: 350px !important;
+    max-height: 460px !important;
+  }
+
+  #offersSection .grid > div {
+    min-height: 220px !important;
+  }
+
+  #whyChooseUsSection .grid > div > div {
+    min-height: 300px !important;
+  }
+
+  #testimonialsSection .swiper-slide > div {
+    min-height: 90px !important;
   }
 }
 
 @media (min-width: 1920px) {
   .luxury-container {
     max-width: 110rem;
+  }
+
+  #collectionsSection {
+    min-height: 100vh !important;
+    justify-content: flex-start !important;
+    padding-top: 180px !important;
+    padding-bottom: 0 !important;
+  }
+
+  #collectionsSection .grid > div {
+    max-height: 550px !important;
   }
 }
 
@@ -169,38 +198,80 @@ body {
   }
 
   #sectionPin section {
-    min-height: 80vh;
-    padding-top: 10vh;
+    min-height: 100vh !important;
+    justify-content: center !important;
+    padding-top: 20 !important;
   }
 
-  /* Exclusive Dining Privileges section overrides for 2560px wide screens */
+  #sectionPin .pin-wrap > div {
+    max-width: 650px !important;
+    max-height: 900px !important;
+    height: 90vh !important;
+  }
+
+  /* Scale up internal card elements for 2K displays */
+  #sectionPin .pin-wrap h3 {
+    font-size: 2.25rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  #sectionPin .pin-wrap h3 + p {
+    font-size: 1.25rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  #sectionPin .pin-wrap h3 + p + div {
+    font-size: 1.125rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  #sectionPin .pin-wrap h3 + p + div svg {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+  }
+
+  #sectionPin .pin-wrap p.leading-relaxed {
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    font-size: 1.125rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 2rem !important;
+  }
+
+  #sectionPin .pin-wrap button {
+    height: 3.5rem !important;
+    font-size: 1.125rem !important;
+  }
+
   #offersSection {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    min-height: 92vh !important;
+    justify-content: center !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
 
   #offersSection > div > div {
     border-radius: 48px;
-    padding: 6rem;
-    gap: 4rem;
+    padding: 10rem !important;
+    gap: 6rem !important;
   }
 
   #offersSection h2 {
-    font-size: 3.75rem; /* text-6xl */
-    line-height: 1.15;
-    margin-bottom: 2rem;
+    font-size: 4.5rem !important;
+    line-height: 1.15 !important;
+    margin-bottom: 2rem !important;
   }
 
   #offersSection p {
-    font-size: 1.25rem; /* text-xl */
-    margin-bottom: 2.5rem;
-   }
+    font-size: 1.5rem !important;
+    margin-bottom: 3rem !important;
+  }
 
   #offersSection button {
-    height: 3.5rem !important; /* h-14 */
+    height: 3.5rem !important;
     padding-left: 2.5rem !important;
     padding-right: 2.5rem !important;
-    font-size: 1.125rem !important; /* text-lg */
+    font-size: 1.125rem !important;
   }
 
   #offersSection .grid {
@@ -209,12 +280,13 @@ body {
 
   #offersSection .grid > div {
     border-radius: 32px;
-    padding: 2.5rem;
+    padding: 3rem !important;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
     transition: transform 0.3s ease;
+    min-height: 440px !important;
   }
 
   #offersSection .grid > div:hover {
@@ -222,59 +294,68 @@ body {
   }
 
   #offersSection .grid > div div:first-child {
-    width: 3.5rem;
-    height: 3.5rem;
-    margin-bottom: 1.5rem;
+    width: 4rem !important;
+    height: 4rem !important;
+    margin-bottom: 2rem !important;
   }
 
   #offersSection .grid > div div:first-child svg {
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 2rem !important;
+    height: 2rem !important;
   }
 
   #offersSection .grid > div h3 {
-    font-size: 1.5rem; /* text-2xl */
-    margin-bottom: 1rem;
+    font-size: 1.75rem !important;
+    margin-bottom: 1rem !important;
   }
 
   #offersSection .grid > div p {
-    font-size: 1rem; /* text-base */
-    margin-bottom: 1.5rem;
+    font-size: 1.125rem !important;
+    margin-bottom: 2rem !important;
   }
 
   #offersSection .grid > div div:last-child {
     padding: 0.5rem 1.25rem;
     border-radius: 12px;
-    font-size: 0.875rem;
+    font-size: 1rem !important;
   }
 
-  /* Testimonials section overrides for 2560px wide screens */
   #testimonialsSection {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    min-height: 94vh !important;
+    justify-content: center !important;
+    padding-top: 0 !important;
+    padding-bottom: 80 !important;
   }
 
   #testimonialsSection .text-center {
-    margin-bottom: 5rem;
+    margin-bottom: 8rem;
   }
 
   #testimonialsSection h2 {
     font-size: 3.75rem !important;
-    margin-bottom: 2rem !important;
+    margin-bottom: 4rem !important;
   }
 
   #testimonialsSection h2 + div {
     width: 8rem !important;
   }
 
-  #testimonialsSection .swiper-slide > div {
+  #testimonialsSection .grid {
+    max-width: 80rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #testimonialsSection .swiper-slide > div,
+  #testimonialsSection .grid > div {
     padding: 3rem !important;
     border-radius: 32px !important;
+    min-height: 680px !important;
   }
 
   #testimonialsSection .swiper-slide svg.lucide-quote {
     width: 4rem !important;
-    height: 4rem !important;
+    height: 5rem !important;
     top: 2rem !important;
     right: 2rem !important;
   }
@@ -312,14 +393,15 @@ body {
     font-size: 1rem !important;
   }
 
-  /* Why Choose DINECODE section overrides for 2560px wide screens */
   #whyChooseUsSection {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    min-height: 100vh !important;
+    justify-content: flex-start !important;
+    padding-top: 180px !important;
+    padding-bottom: 0 !important;
   }
 
   #whyChooseUsSection .text-center {
-    margin-bottom: 5rem;
+    margin-bottom: 8rem;
   }
 
   #whyChooseUsSection h2 {
@@ -344,11 +426,12 @@ body {
   #whyChooseUsSection .grid > div > div {
     padding: 3rem 2.5rem !important;
     border-radius: 24px !important;
+    min-height: 400px !important;
   }
 
   #whyChooseUsSection .grid > div svg {
-    width: 3.5rem !important;
-    height: 3.5rem !important;
+    width: 4.5rem !important;
+    height: 4.5rem !important;
   }
 
   #whyChooseUsSection .grid > div > div > div:first-child {
@@ -356,13 +439,130 @@ body {
   }
 
   #whyChooseUsSection .grid h3 {
-    font-size: 1.5rem !important;
+    font-size: 1.85rem !important;
     margin-bottom: 1rem !important;
   }
 
   #whyChooseUsSection .grid p {
-    font-size: 1.125rem !important;
+    font-size: 1.25rem !important;
     line-height: 1.6 !important;
+  }
+
+  /* Curated Experiences section overrides for 2560px wide screens */
+  #curatedExperiencesSection {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+
+  #curatedExperiencesSection .text-center {
+    margin-bottom: 3.5rem !important;
+  }
+
+  #curatedExperiencesSection h2 {
+    font-size: 3.75rem !important;
+  }
+
+  #curatedExperiencesSection .grid > div > div {
+    min-height: 240px !important;
+    padding: 3rem 2rem !important;
+  }
+
+  #curatedExperiencesSection .grid svg {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+  }
+
+  #curatedExperiencesSection .grid h3 {
+    font-size: 1.5rem !important;
+  }
+
+  /* Popular Areas section overrides for 2560px wide screens */
+  #popularAreasSection .grid > div > div {
+    height: 380px !important;
+  }
+
+  /* Restaurant Details page overrides for 2560px wide screens */
+  #restaurantHero {
+    height: 80vh !important;
+    min-height: 900px !important;
+  }
+
+  #restaurantDetailsContainer {
+    margin-top: 8rem !important;
+  }
+
+  #restaurantDetailsContainer h2 {
+    font-size: 2.5rem !important;
+  }
+
+  #restaurantDetailsContainer p {
+    font-size: 1.25rem !important;
+  }
+
+  #restaurantDetailsContainer .sticky {
+    top: 120px !important;
+  }
+
+  /* Discover Page grid overrides for 2560px wide screens */
+  #discoverGridSection {
+    min-height: 90vh !important;
+  }
+
+  #discoverGridSection .grid > div > div {
+    min-height: 560px !important;
+  }
+
+  #discoverGridSection .grid > div > div .relative {
+    height: 340px !important;
+  }
+
+  /* Area Page overrides */
+  #areaMainContent {
+    min-height: 85vh !important;
+  }
+
+  #areaMainContent section .grid > div {
+    min-height: 480px !important;
+  }
+
+  #areaMainContent section .grid > div > div:first-child {
+    height: 360px !important;
+  }
+
+  /* Blog Page overrides */
+  #blogListSection {
+    min-height: 85vh !important;
+  }
+
+  #blogListSection .grid .bg-white {
+    min-height: 280px !important;
+    height: 280px !important;
+  }
+
+  #blogListSection .grid .bg-white > div:first-child {
+    height: 100% !important;
+  }
+
+  /* Blog Details page overrides for 1920px+ wide screens */
+  #blogHero {
+    height: 80vh !important;
+    min-height: 900px !important;
+  }
+
+  #blogDetailsContainer {
+    margin-top: 8rem !important;
+  }
+
+  #blogDetailsContainer h2 {
+    font-size: 2.5rem !important;
+  }
+
+  #blogDetailsContainer p {
+    font-size: 1.25rem !important;
+  }
+
+  #blogDetailsContainer .sticky {
+    top: 120px !important;
   }
 }
 

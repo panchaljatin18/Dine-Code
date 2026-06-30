@@ -42,9 +42,9 @@ export default function Collections() {
       <div className="lg:hidden">
         <section className="h-screen overflow-hidden bg-[var(--color-soft-cream)] flex flex-col justify-center">
           {/* Header */}
-          <div className="text-center mb-8 px-5">
+          <div className="text-center mb-10 px-5">
             <h2 className="font-playfair text-fluid-title font-bold text-[var(--color-primary)] mb-3">
-              Curated Collections
+              Best of the City
             </h2>
             <div className="w-20 h-1 bg-[var(--color-secondary)] mx-auto mb-4" />
             <p className="text-[var(--color-subtext)] text-sm max-w-xs mx-auto">
@@ -70,7 +70,7 @@ export default function Collections() {
       </div>
 
       {/* ── DESKTOP (lg+): Static section with grid ── */}
-      <section className="hidden lg:block section-py bg-warm-ivory overflow-hidden">
+      <section id="collectionsSection" className="hidden lg:block min-h-screen flex flex-col justify-center section-py bg-warm-ivory overflow-hidden">
         <div className="luxury-container">
           <div className="text-center mb-16">
             <motion.h2
@@ -79,7 +79,7 @@ export default function Collections() {
               viewport={{ once: true }}
               className="font-playfair text-fluid-title font-bold text-royal-navy mb-4"
             >
-              Curated Collections
+              Best of the City
             </motion.h2>
             <motion.div
               initial={{ opacity: 1, scale: 1 }}

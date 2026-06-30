@@ -17,7 +17,7 @@ export default function WhyChooseUs() {
       icon: <Utensils className="w-10 h-10 text-[#D4AF37]" />,
     },
     {
-      title: "Curated Recommendations",
+      title: "Bespoke Recommendations",
       description: "Every recommendation is thoughtfully selected for quality and experience.",
       icon: <Star className="w-10 h-10 text-[#D4AF37]" />,
     },
@@ -34,15 +34,15 @@ export default function WhyChooseUs() {
   };
 
   return (
-    <section id="whyChooseUsSection" className="section-py bg-[var(--color-primary)]">
+    <section id="whyChooseUsSection" className="min-h-screen flex flex-col justify-start pt-24 md:pt-42 section-py bg-[var(--color-primary)]">
       <div className="luxury-container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-18">
           <motion.h2
             initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="text-fluid-title font-bold text-[var(--color-warm-ivory)] mb-4"
+            className="text-fluid-title font-bold text-[var(--color-warm-ivory)] mb-8"
             style={{ fontFamily: "'Cinzel', serif" }}
           >
             Why Choose DINECODE
@@ -80,7 +80,7 @@ export default function WhyChooseUs() {
         >
           {features.map((feature, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <Card className="p-6 md:p-8 h-full flex flex-col bg-white rounded-lg border border-transparent shadow-soft hover:shadow-soft-hover hover:border-[var(--color-secondary)] hover:-translate-y-2 transition-all duration-300 ease-out">
+              <Card className="p-6 md:p-8 h-full flex flex-col items-center justify-center text-center bg-white rounded-[var(--radius-luxury)] border border-transparent shadow-soft hover:shadow-soft-hover hover:border-[var(--color-secondary)] hover:-translate-y-2 transition-all duration-300 ease-out">
                 <div className="mb-6">
                   {feature.icon}
                 </div>

@@ -68,7 +68,7 @@ export default function Navbar() {
             : "py-3 md:py-4 bg-[var(--color-primary)] border-b border-white/10 shadow-lg"
         )}
       >
-        <div className="luxury-container flex items-center justify-between">
+        <div className="luxury-container !px-6 lg:!px-8 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="group relative z-50 flex items-center shrink-0">
             <Image
@@ -82,7 +82,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+          <nav className="hidden lg:flex items-center gap-4 lg:gap-5 xl:gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}

@@ -64,93 +64,103 @@ export default function TrendingRestaurants() {
     <div className="gsap-scroll-trigger-wrapper">
       {/* Outer div is the GSAP pin target — NOT the section itself */}
       <div ref={sectionRef} id="sectionPin">
-        <section className="min-h-screen overflow-hidden bg-[var(--color-primary)] flex flex-col justify-center">
-        {/* Header */}
-        <div className="w-full z-10 mb-6 md:mb-15">
-          <div className="luxury-container w-full">
-            <div className="flex flex-row justify-between items-end">
-              <div>
-                <h2 className="font-playfair text-fluid-title font-bold text-white mb-3 md:mb-6">
-                  Trending Now
-                </h2>
-                <div className="w-20 md:w-24 h-1 bg-[var(--color-secondary)]" />
+        <section className="min-h-screen overflow-hidden bg-[var(--color-primary)] flex flex-col justify-center ">
+          {/* Header */}
+          <div className="w-full z-10 mb-6 md:mb-10">
+            <div className="luxury-container w-full">
+              <div className="flex flex-row justify-between items-end">
+                <div>
+                  <h2 className="font-playfair text-fluid-title font-bold text-white mb-3 md:mb-2">
+                    Trending Now
+                  </h2>
+                  <div className="w-20 md:w-24 h-1 bg-[var(--color-secondary)]" />
+                </div>
+                <Link href="/discover">
+                  <Button
+                    variant="secondary"
+                    className="shadow-soft hover:shadow-soft-hover transition-all border-none text-sm md:text-base"
+                  >
+                    View All Trending
+                  </Button>
+                </Link>
               </div>
-              <Button
-                variant="secondary"
-                className="shadow-soft hover:shadow-soft-hover transition-all border-none text-sm md:text-base"
-              >
-                View All Trending
-              </Button>
             </div>
           </div>
-        </div>
 
-        {/* Horizontally sliding cards row */}
-        <div className="w-full overflow-x-auto lg:overflow-x-hidden scrollbar-hide scroll-smooth snap-x snap-mandatory">
-          <div
-            ref={pinWrapRef}
-            className="pin-wrap flex justify-start items-center w-max carousel-align-left pr-[10vw]"
-            style={{ willChange: "transform" }}
-          >
-            {restaurants.map((restaurant) => (
-              <div
-                key={restaurant.id}
-                className="w-[78vw] sm:w-[60vw] md:w-[42vw] lg:w-[30vw] xl:w-[28vw] max-w-[420px] shrink-0 h-[58vh] max-h-[520px] min-h-[360px] mr-4 md:mr-6 lg:mr-8 snap-center snap-always"
-              >
-                <Card className="h-full flex flex-col group bg-white shadow-soft">
-                  {/* Image */}
-                  <div className="relative h-[52%] overflow-hidden">
-                    <Image
-                      src={restaurant.image}
-                      alt={restaurant.name}
-                      fill
-                      sizes="(max-width: 640px) 78vw, (max-width: 1024px) 42vw, 30vw"
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full flex items-center shadow-sm">
-                      <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500 mr-1" />
-                      <span className="font-semibold text-xs text-gray-900">{restaurant.rating}</span>
-                    </div>
-                  </div>
-
-                  {/* Info */}
-                  <div className="p-4 md:p-5 flex flex-col flex-grow bg-white">
-                    <h3 className="font-playfair text-lg md:text-xl font-bold text-[var(--color-primary)] mb-1 group-hover:text-[var(--color-secondary)] transition-colors line-clamp-1">
-                      {restaurant.name}
-                    </h3>
-                    <p className="text-[var(--color-subtext)] text-xs md:text-sm mb-3 line-clamp-1">
-                      {restaurant.cuisine}
-                    </p>
-                    <div className="flex items-center text-xs text-[var(--color-subtext)] mb-4">
-                      <MapPin className="w-3.5 h-3.5 mr-1 text-[var(--color-secondary)] shrink-0" />
-                      <span className="truncate">{restaurant.location}</span>
-                      <span className="mx-1.5">•</span>
-                      <span className="whitespace-nowrap">{restaurant.priceForTwo} for two</span>
+          {/* Horizontally sliding cards row */}
+          <div className="w-full overflow-x-auto lg:overflow-x-hidden scrollbar-hide scroll-smooth snap-x snap-mandatory pt-6 pb-10">
+            <div
+              ref={pinWrapRef}
+              className="pin-wrap flex justify-start items-center w-max carousel-align-left pr-[10vw]"
+              style={{ willChange: "transform" }}
+            >
+              {restaurants.map((restaurant) => (
+                <div
+                  key={restaurant.id}
+                  className="w-[78vw] sm:w-[60vw] md:w-[42vw] lg:w-[30vw] xl:w-[28vw] max-w-[420px] shrink-0 h-[58vh] max-h-[520px] min-h-[450px] mr-4 md:mr-6 lg:mr-8 snap-center snap-always"
+                >
+                  <Card className="h-full flex flex-col group bg-white shadow-soft">
+                    {/* Image */}
+                    <div className="relative h-[56%] overflow-hidden">
+                      <Image
+                        src={restaurant.image}
+                        alt={restaurant.name}
+                        fill
+                        sizes="(max-width: 640px) 78vw, (max-width: 1024px) 42vw, 30vw"
+                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full flex items-center shadow-sm">
+                        <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500 mr-1" />
+                        <span className="font-semibold text-xs text-gray-900">{restaurant.rating}</span>
+                      </div>
                     </div>
 
-                    {/* Buttons */}
-                    <div className="mt-auto flex gap-2 pt-3 border-t border-[var(--color-border)]/30">
-                      <Button
-                        variant="outline"
-                        className="flex-1 text-xs md:text-sm px-2 py-2 whitespace-nowrap"
-                        onClick={() => setQuickViewRestaurant(restaurant)}
-                      >
-                        Quick View
-                      </Button>
-                      <Link href={`/discover/${restaurant.slug}?from=home`} className="flex-1">
-                        <Button className="w-full text-xs md:text-sm px-2 py-2 shadow-soft hover:shadow-soft-hover transition-all whitespace-nowrap">
-                          View Details
+                    {/* Info */}
+                    <div className="p-4 md:p-5 flex flex-col flex-grow bg-white">
+                      <h3 className="font-playfair text-lg md:text-xl font-bold text-[var(--color-primary)] mb-1 group-hover:text-[var(--color-secondary)] transition-colors line-clamp-1">
+                        {restaurant.name}
+                      </h3>
+                      <p className="text-[var(--color-subtext)] text-xs md:text-sm mb-3 line-clamp-1">
+                        {restaurant.cuisine}
+                      </p>
+                      <div className="flex items-center text-xs text-[var(--color-subtext)] mb-4">
+                        <MapPin className="w-3.5 h-3.5 mr-1 text-[var(--color-secondary)] shrink-0" />
+                        <span className="truncate">{restaurant.location}</span>
+                        {restaurant.priceForTwo && (
+                          <>
+                            <span className="mx-1.5">•</span>
+                            <span className="whitespace-nowrap">{restaurant.priceForTwo} for two</span>
+                          </>
+                        )}
+                      </div>
+
+                      <p className="line-clamp-2 text-xs text-[var(--color-subtext)]/85 mb-4 leading-relaxed font-light">
+                        {restaurant.description}
+                      </p>
+
+                      {/* Buttons */}
+                      <div className="mt-auto flex gap-2 pt-3 border-t border-[var(--color-border)]/30">
+                        <Button
+                          variant="outline"
+                          className="flex-1 text-xs md:text-sm px-2 py-2 whitespace-nowrap"
+                          onClick={() => setQuickViewRestaurant(restaurant)}
+                        >
+                          Quick View
                         </Button>
-                      </Link>
+                        <Link href={`/discover/${restaurant.slug}?from=home`} className="flex-1">
+                          <Button className="w-full text-xs md:text-sm px-2 py-2 shadow-soft hover:shadow-soft-hover transition-all whitespace-nowrap">
+                            View Details
+                          </Button>
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                </Card>
-              </div>
-            ))}
-            {/* trailing spacer */}
-            <div className="w-[5vw] shrink-0" />
+                  </Card>
+                </div>
+              ))}
+              {/* trailing spacer */}
+              <div className="w-[5vw] shrink-0" />
+            </div>
           </div>
-        </div>
         </section>
       </div>
 

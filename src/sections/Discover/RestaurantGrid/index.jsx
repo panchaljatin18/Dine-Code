@@ -29,7 +29,7 @@ function RestaurantGridContent() {
   });
 
   return (
-    <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-12">
+    <div id="discoverGridSection" className="luxury-container pt-12 min-h-[60vh] md:min-h-[70vh] lg:min-h-[75vh]">
       <div className="flex flex-col lg:flex-row gap-8">
         
         {/* Mobile Filter Toggle */}
@@ -101,12 +101,13 @@ function RestaurantGridContent() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.4 }}
                 >
-                  <Card className="h-full flex flex-col group bg-white shadow-soft">
-                    <div className="relative h-48 w-full overflow-hidden">
+                  <Card className="h-full flex flex-col group bg-white shadow-soft min-h-[380px] md:min-h-[420px] lg:min-h-[460px]">
+                    <div className="relative h-48 md:h-56 lg:h-60 w-full overflow-hidden">
                       <Image 
                         src={restaurant.image} 
                         alt={restaurant.name}
                         fill
+                        unoptimized
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover group-hover:scale-110 transition-transform duration-700"
                         priority={index === 0}
@@ -126,8 +127,12 @@ function RestaurantGridContent() {
                       <div className="flex items-center text-sm text-[var(--color-subtext)] mb-6">
                         <MapPin className="w-4 h-4 mr-1 text-[var(--color-secondary)] shrink-0" />
                         <span className="line-clamp-1">{restaurant.location}</span>
-                        <span className="mx-2">•</span>
-                        <span className="whitespace-nowrap">{restaurant.priceForTwo} for two</span>
+                        {restaurant.priceForTwo && (
+                          <>
+                            <span className="mx-2">•</span>
+                            <span className="whitespace-nowrap">{restaurant.priceForTwo} for two</span>
+                          </>
+                        )}
                       </div>
                       <div className="mt-auto flex gap-2">
                         <Button 
