@@ -32,7 +32,7 @@ html {
 
 @media (max-width: 1919px) and (min-width: 1536px) {
   html {
-    font-size: 14.4px;
+    font-size: 15.4px;
   }
 }
 @media (max-width: 1535px) and (min-width: 1440px) {
@@ -180,6 +180,35 @@ body {
     max-width: 110rem;
   }
 
+  /* Header / Navbar adjustments for 1920px+ displays */
+  header.bg-transparent {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  header.shadow-lg {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  header img {
+    height: 3.5rem !important;
+  }
+  header nav {
+    gap: 2.5rem !important;
+  }
+  header nav a {
+    font-size: 1.05rem !important;
+  }
+  header a[href="/login"] button {
+    font-size: 1.05rem !important;
+    height: 3rem !important;
+    padding-left: 1.75rem !important;
+    padding-right: 1.75rem !important;
+  }
+  header a[href="/login"] button svg {
+    width: 1.1rem !important;
+    height: 1.1rem !important;
+  }
+
   #collectionsSection {
     min-height: 100vh !important;
     justify-content: flex-start !important;
@@ -192,11 +221,39 @@ body {
   }
 }
 
-@media (min-width: 2560px) {
+@media (min-width: 2000px) {
   .luxury-container {
     max-width: 140rem;
   }
 
+  /* Header / Navbar adjustments for 2K displays (2560x1440) */
+  header.bg-transparent {
+    padding-top: 2.25rem !important;
+    padding-bottom: 2.25rem !important;
+  }
+  header.shadow-lg {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  header img {
+    height: 4.15rem !important;
+  }
+  header nav {
+    gap: 3.5rem !important;
+  }
+  header nav a {
+    font-size: 1.15rem !important;
+  }
+  header a[href="/login"] button {
+    font-size: 1.2rem !important;
+    height: 3rem !important;
+    padding-left: 2.25rem !important;
+    padding-right: 2.25rem !important;
+  }
+  header a[href="/login"] button svg {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+  }
   #sectionPin section {
     min-height: 100vh !important;
     justify-content: center !important;
@@ -324,72 +381,84 @@ body {
     min-height: 94vh !important;
     justify-content: center !important;
     padding-top: 0 !important;
-    padding-bottom: 80 !important;
+    padding-bottom: 20 !important;
   }
 
   #testimonialsSection .text-center {
-    margin-bottom: 8rem;
+    margin-bottom: 3rem;
   }
 
   #testimonialsSection h2 {
     font-size: 3.75rem !important;
-    margin-bottom: 4rem !important;
+    margin-bottom: 1rem !important;
   }
 
   #testimonialsSection h2 + div {
     width: 8rem !important;
   }
 
-  #testimonialsSection .grid {
-    max-width: 80rem !important;
+  #testimonialsSection .testimonials-grid {
+    max-width: 100rem !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
 
   #testimonialsSection .swiper-slide > div,
-  #testimonialsSection .grid > div {
+  #testimonialsSection .testimonials-grid > div {
     padding: 3rem !important;
     border-radius: 32px !important;
-    min-height: 680px !important;
+    min-height: 450px !important;
   }
 
-  #testimonialsSection .swiper-slide svg.lucide-quote {
+  #testimonialsSection .swiper-slide svg.lucide-quote,
+  #testimonialsSection .testimonials-grid svg.lucide-quote {
     width: 4rem !important;
     height: 5rem !important;
     top: 2rem !important;
     right: 2rem !important;
   }
 
-  #testimonialsSection .swiper-slide > div > div:first-of-type {
+  #testimonialsSection .swiper-slide > div > div:first-of-type,
+  #testimonialsSection .testimonials-grid > div > div:first-of-type {
     margin-bottom: 2rem !important;
   }
 
-  #testimonialsSection .swiper-slide > div > div:first-of-type svg {
+  #testimonialsSection .swiper-slide > div > div:first-of-type svg,
+  #testimonialsSection .testimonials-grid > div > div:first-of-type svg {
     width: 1.5rem !important;
     height: 1.5rem !important;
   }
 
-  #testimonialsSection .swiper-slide p {
+  #testimonialsSection .swiper-slide p,
+  #testimonialsSection .testimonials-grid p {
     font-size: 1.25rem !important;
     margin-bottom: 2.5rem !important;
   }
 
-  #testimonialsSection .swiper-slide > div > div:last-child {
+  #testimonialsSection .swiper-slide > div > div:last-child,
+  #testimonialsSection .testimonials-grid > div > div:last-child {
     margin-top: auto;
   }
 
-  #testimonialsSection .swiper-slide > div > div:last-child > div:first-child {
+  #testimonialsSection .swiper-slide > div > div:last-child > div:first-child,
+  #testimonialsSection
+    .testimonials-grid
+    > div
+    > div:last-child
+    > div:first-child {
     width: 4rem !important;
     height: 4rem !important;
     margin-right: 1.5rem !important;
   }
 
-  #testimonialsSection .swiper-slide h4 {
+  #testimonialsSection .swiper-slide h4,
+  #testimonialsSection .testimonials-grid h4 {
     font-size: 1.5rem !important;
     margin-bottom: 0.25rem !important;
   }
 
-  #testimonialsSection .swiper-slide > div > div:last-child p {
+  #testimonialsSection .swiper-slide > div > div:last-child p,
+  #testimonialsSection .testimonials-grid > div > div:last-child p {
     font-size: 1rem !important;
   }
 
@@ -580,7 +649,7 @@ body {
     padding-left: calc((100vw - 110rem) / 2 + clamp(1rem, 5vw, 4rem));
   }
 }
-@media (min-width: 2560px) {
+@media (min-width: 2000px) {
   .carousel-align-left {
     padding-left: calc((100vw - 140rem) / 2 + clamp(1rem, 5vw, 4rem));
   }

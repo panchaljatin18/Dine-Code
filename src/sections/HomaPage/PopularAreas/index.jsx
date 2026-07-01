@@ -21,15 +21,27 @@ export default function PopularAreas() {
       <div className="lg:hidden">
         <section className="min-h-screen overflow-hidden bg-[var(--color-royal-navy)] flex flex-col justify-center">
           {/* Header */}
-          <div className="text-center mb-8 px-5">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8 px-5"
+          >
             <h2 className="font-playfair text-fluid-title font-bold text-[var(--color-warm-ivory)] mb-3">
               Explore Popular Areas
             </h2>
             <div className="w-20 h-1 bg-[var(--color-secondary)] mx-auto" />
-          </div>
+          </motion.div>
 
           {/* Horizontal scroll cards container */}
-          <div className="w-full overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory">
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="w-full overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory"
+          >
             <div className="flex items-center w-max px-5 gap-4">
               {areas.map((area, index) => (
                 <div
@@ -55,7 +67,7 @@ export default function PopularAreas() {
               ))}
               <div className="w-[5vw] shrink-0" />
             </div>
-          </div>
+          </motion.div>
         </section>
       </div>
 
@@ -64,17 +76,19 @@ export default function PopularAreas() {
         <div className="luxury-container">
           <div className="text-center mb-16">
             <motion.h2
-              initial={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
               className="font-playfair text-fluid-title font-bold text-[var(--color-warm-ivory)] mb-4"
             >
               Explore Popular Areas
             </motion.h2>
             <motion.div
-              initial={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               className="w-24 h-1 bg-[var(--color-secondary)] mx-auto"
             />
           </div>
@@ -83,10 +97,10 @@ export default function PopularAreas() {
             {areas.map((area, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 1, scale: 1 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
               >
                 <Card className="group relative h-64 overflow-hidden cursor-pointer">
                   <Image

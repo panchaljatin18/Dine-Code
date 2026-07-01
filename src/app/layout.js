@@ -1,5 +1,6 @@
 import { Playfair_Display, Inter } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
+import PreFooterCTA from "@/components/layout/PreFooterCTA";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
         <main className="flex-grow">
           {children}
         </main>
+        <PreFooterCTA />
         <Footer />
       </body>
     </html>

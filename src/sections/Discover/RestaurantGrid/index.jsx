@@ -31,7 +31,7 @@ function RestaurantGridContent() {
   return (
     <div id="discoverGridSection" className="luxury-container pt-12 min-h-[60vh] md:min-h-[70vh] lg:min-h-[75vh]">
       <div className="flex flex-col lg:flex-row gap-8">
-        
+
         {/* Mobile Filter Toggle */}
         <div className="lg:hidden mb-4">
           <Button variant="outline" className="w-full" onClick={() => setIsFilterOpen(!isFilterOpen)}>
@@ -44,49 +44,49 @@ function RestaurantGridContent() {
         <div className={`lg:w-1/4 ${isFilterOpen ? 'block' : 'hidden'} lg:block`}>
           <div className="bg-white p-6 rounded-[var(--radius-luxury)] shadow-soft sticky top-32 border border-[var(--color-border)]/50">
             <div className="flex items-center justify-between mb-6 pb-4 border-b border-[var(--color-border)]">
-              <h3 className="font-bold text-[var(--color-primary)] text-lg">Filters</h3>
-              <span className="text-sm text-[var(--color-secondary)] cursor-pointer">Clear All</span>
+              <h3 className="font-bold text-[var(--color-primary)] text-base sm:text-lg xl:text-xl">Filters</h3>
+              <span className="text-xs sm:text-sm xl:text-base text-[var(--color-secondary)] cursor-pointer hover:underline transition-all">Clear All</span>
             </div>
-            
+
             <div className="space-y-6">
               <div>
-                <h4 className="font-semibold text-[var(--color-primary)] mb-3">Cuisine</h4>
-                <div className="space-y-2 text-sm text-[var(--color-subtext)]">
+                <h4 className="font-semibold text-[var(--color-primary)] text-sm sm:text-base xl:text-lg mb-3">Cuisine</h4>
+                <div className="space-y-2 text-xs sm:text-sm xl:text-base text-[var(--color-subtext)]">
                   {["North Indian", "Italian", "Chinese", "Continental", "Gujarati"].map(c => (
-                    <label key={c} className="flex items-center space-x-2 cursor-pointer">
-                      <input type="checkbox" className="rounded text-[var(--color-secondary)] focus:ring-[var(--color-secondary)]" />
-                      <span>{c}</span>
+                    <label key={c} className="flex items-center space-x-2 cursor-pointer group">
+                      <input type="checkbox" className="rounded border-gray-300 text-[var(--color-secondary)] focus:ring-[var(--color-secondary)] w-3.5 h-3.5 sm:w-4 sm:h-4 xl:w-4.5 xl:h-4.5 cursor-pointer transition-all" />
+                      <span className="group-hover:text-[var(--color-primary)] transition-colors">{c}</span>
                     </label>
                   ))}
                 </div>
               </div>
 
               <div>
-                <h4 className="font-semibold text-[var(--color-primary)] mb-3">Area</h4>
-                <div className="space-y-2 text-sm text-[var(--color-subtext)]">
+                <h4 className="font-semibold text-[var(--color-primary)] text-sm sm:text-base xl:text-lg mb-3">Area</h4>
+                <div className="space-y-2 text-xs sm:text-sm xl:text-base text-[var(--color-subtext)]">
                   {["SG Highway", "Sindhu Bhavan", "Bodakdev", "Prahlad Nagar"].map(a => (
-                    <label key={a} className="flex items-center space-x-2 cursor-pointer">
-                      <input type="checkbox" className="rounded text-[var(--color-secondary)] focus:ring-[var(--color-secondary)]" />
-                      <span>{a}</span>
+                    <label key={a} className="flex items-center space-x-2 cursor-pointer group">
+                      <input type="checkbox" className="rounded border-gray-300 text-[var(--color-secondary)] focus:ring-[var(--color-secondary)] w-3.5 h-3.5 sm:w-4 sm:h-4 xl:w-4.5 xl:h-4.5 cursor-pointer transition-all" />
+                      <span className="group-hover:text-[var(--color-primary)] transition-colors">{a}</span>
                     </label>
                   ))}
                 </div>
               </div>
 
               <div>
-                <h4 className="font-semibold text-[var(--color-primary)] mb-3">Features</h4>
-                <div className="space-y-2 text-sm text-[var(--color-subtext)]">
+                <h4 className="font-semibold text-[var(--color-primary)] text-sm sm:text-base xl:text-lg mb-3">Features</h4>
+                <div className="space-y-2 text-xs sm:text-sm xl:text-base text-[var(--color-subtext)]">
                   {["Pure Veg", "Rooftop", "Outdoor Seating", "Parking Available"].map(f => (
-                    <label key={f} className="flex items-center space-x-2 cursor-pointer">
-                      <input type="checkbox" className="rounded text-[var(--color-secondary)] focus:ring-[var(--color-secondary)]" />
-                      <span>{f}</span>
+                    <label key={f} className="flex items-center space-x-2 cursor-pointer group">
+                      <input type="checkbox" className="rounded border-gray-300 text-[var(--color-secondary)] focus:ring-[var(--color-secondary)] w-3.5 h-3.5 sm:w-4 sm:h-4 xl:w-4.5 xl:h-4.5 cursor-pointer transition-all" />
+                      <span className="group-hover:text-[var(--color-primary)] transition-colors">{f}</span>
                     </label>
                   ))}
                 </div>
               </div>
             </div>
-            
-            <Button className="w-full mt-8">Apply Filters</Button>
+
+            <Button className="w-full mt-8 text-xs sm:text-sm xl:text-base py-2.5 sm:py-3 h-auto min-h-0">Apply Filters</Button>
           </div>
         </div>
 
@@ -103,8 +103,8 @@ function RestaurantGridContent() {
                 >
                   <Card className="h-full flex flex-col group bg-white shadow-soft min-h-[380px] md:min-h-[420px] lg:min-h-[460px]">
                     <div className="relative h-48 md:h-56 lg:h-60 w-full overflow-hidden">
-                      <Image 
-                        src={restaurant.image} 
+                      <Image
+                        src={restaurant.image}
                         alt={restaurant.name}
                         fill
                         unoptimized
@@ -135,16 +135,16 @@ function RestaurantGridContent() {
                         )}
                       </div>
                       <div className="mt-auto flex gap-2">
-                        <Button 
-                          variant="outline" 
+                        <Button
+                          variant="outline"
                           className="flex-1 whitespace-nowrap text-[13px] md:text-sm px-1 py-2.5 w-full"
                           onClick={() => setQuickViewRestaurant(restaurant)}
                         >
                           Quick View
                         </Button>
                         <Link href={`/discover/${restaurant.slug}?from=discover`} className="flex-1">
-                           <Button className="w-full whitespace-nowrap text-[13px] md:text-sm px-1 py-2.5 w-full h-full">View Details</Button>
-                         </Link>
+                          <Button className="w-full whitespace-nowrap text-[13px] md:text-sm px-1 py-2.5 w-full h-full">View Details</Button>
+                        </Link>
                       </div>
                     </div>
                   </Card>
@@ -162,8 +162,8 @@ function RestaurantGridContent() {
           {filteredRestaurants.length > 0 && (
             <div className="flex justify-center mt-12 space-x-2">
               {[1, 2, 3, 4].map(page => (
-                <button 
-                  key={page} 
+                <button
+                  key={page}
                   className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${page === 1 ? 'bg-[var(--color-primary)] text-white' : 'bg-white text-[var(--color-primary)] hover:bg-gray-100 border border-[var(--color-border)]'}`}
                 >
                   {page}
@@ -180,8 +180,8 @@ function RestaurantGridContent() {
         {quickViewRestaurant && (
           <div className="flex flex-col md:flex-row h-full">
             <div className="relative w-full md:w-2/5 h-64 md:h-auto shrink-0">
-              <Image 
-                src={quickViewRestaurant.image} 
+              <Image
+                src={quickViewRestaurant.image}
                 alt={quickViewRestaurant.name}
                 fill
                 className="object-cover rounded-t-[var(--radius-luxury)] md:rounded-tr-none md:rounded-l-[var(--radius-luxury)]"
@@ -196,11 +196,11 @@ function RestaurantGridContent() {
                   {quickViewRestaurant.rating} <Star className="w-4 h-4 ml-1 fill-amber-700" />
                 </div>
               </div>
-              
+
               <p className="text-[var(--color-secondary)] font-medium mb-4">
                 {quickViewRestaurant.cuisine}
               </p>
-              
+
               <p className="text-gray-600 mb-6 leading-relaxed">
                 {quickViewRestaurant.description}
               </p>
@@ -237,7 +237,7 @@ function RestaurantGridContent() {
                   <p className="text-sm text-gray-500 mb-1">Average Cost</p>
                   <p className="text-xl font-bold text-gray-900">{quickViewRestaurant.priceForTwo} <span className="text-sm font-normal text-gray-500">for two</span></p>
                 </div>
-                 <Link href={`/discover/${quickViewRestaurant.slug}?from=discover`} className="flex-1">
+                <Link href={`/discover/${quickViewRestaurant.slug}?from=discover`} className="flex-1">
                   <Button className="w-full h-full text-lg">Book a Table</Button>
                 </Link>
               </div>

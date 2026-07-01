@@ -77,7 +77,7 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
         >
           {/* Desktop Grid Layout (lg+) - 3 columns, 2 rows */}
-          <div className="hidden lg:grid grid-cols-3 gap-6">
+          <div className="hidden lg:grid grid-cols-3 gap-6 testimonials-grid">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="p-8 h-full flex flex-col relative group bg-white border border-[#E7E3DA] rounded-[24px] shadow-[0_12px_35px_rgba(11,35,72,0.06)] hover:shadow-[0_20px_50px_rgba(11,35,72,0.12)] hover:border-[var(--color-secondary)] hover:-translate-y-2 transition-all duration-400 ease-out">
                 <Quote className="absolute top-6 right-6 w-12 h-12 text-[var(--color-border)] opacity-50 group-hover:text-[var(--color-secondary)]/20 transition-colors duration-350" />

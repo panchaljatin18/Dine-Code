@@ -42,7 +42,13 @@ export default function Collections() {
       <div className="lg:hidden">
         <section className="h-screen overflow-hidden bg-[var(--color-soft-cream)] flex flex-col justify-center">
           {/* Header */}
-          <div className="text-center mb-10 px-5">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-10 px-5"
+          >
             <h2 className="font-playfair text-fluid-title font-bold text-[var(--color-primary)] mb-3">
               Best of the City
             </h2>
@@ -50,10 +56,16 @@ export default function Collections() {
             <p className="text-[var(--color-subtext)] text-sm max-w-xs mx-auto">
               Explore curated lists of top restaurants, cafes, and bars in Ahmedabad.
             </p>
-          </div>
+          </motion.div>
 
           {/* Horizontal scroll cards container */}
-          <div className="w-full overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory">
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="w-full overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory"
+          >
             <div className="flex items-center w-max px-5 gap-4">
               {collections.map((collection, index) => (
                 <div
@@ -65,7 +77,7 @@ export default function Collections() {
               ))}
               <div className="w-[5vw] shrink-0" />
             </div>
-          </div>
+          </motion.div>
         </section>
       </div>
 
@@ -74,23 +86,26 @@ export default function Collections() {
         <div className="luxury-container">
           <div className="text-center mb-16">
             <motion.h2
-              initial={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
               className="font-playfair text-fluid-title font-bold text-royal-navy mb-4"
             >
               Best of the City
             </motion.h2>
             <motion.div
-              initial={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               className="w-24 h-1 bg-[var(--color-secondary)] mx-auto mb-6"
             />
             <motion.p
-              initial={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="text-[var(--color-subtext)] max-w-2xl mx-auto"
             >
               Explore curated lists of top restaurants, cafes, and bars in Ahmedabad, based on trends.
@@ -101,10 +116,10 @@ export default function Collections() {
             {collections.map((collection, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
                 className="group relative h-[350px] rounded-[var(--radius-luxury)] overflow-hidden cursor-pointer"
               >
                 <Image

@@ -1,125 +1,318 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone, Mail, ArrowRight } from "lucide-react";
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
-import Button from "@/components/ui/Button";
+import NewsletterForm from "./NewsletterForm";
 
 export default function Footer() {
   return (
-    <footer className="bg-deep-navy text-white pt-16 pb-10">
-      <div className="luxury-container">
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 md:gap-10 mb-12 md:mb-16">
-          {/* Brand Info */}
-          <div className="space-y-6 text-center sm:text-left">
-            <Link href="/" className="inline-block mb-2 mx-auto sm:mx-0">
-              <Image
-                src="/assets/icon.png"
-                alt="DINECODE Logo"
-                width={400}
-                height={100}
-                className="object-contain w-auto h-20"
-              />
-            </Link>
-            <p className="text-white/80 leading-relaxed">
-              Premium luxury dining guide curated in Ahmedabad. Discover the finest restaurants, cafes, and hidden culinary gems across the city.
-            </p>
+    <footer
+      className="relative overflow-hidden text-[#F5F1E8]"
+      style={{
+        background: "linear-gradient(160deg, #0B2348 0%, #081E46 55%, #060f2a 100%)",
+        borderTop: "1px solid rgba(212,175,55,0.22)",
+        borderBottom: "1px solid rgba(212,175,55,0.10)",
+      }}
+    >
+      {/* Radial glow */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(212,175,55,0.04) 0%, transparent 50%)",
+        }}
+      />
 
-            <div className="space-y-3 pt-2">
-              <div className="flex items-start text-white/80">
-                <Phone className="w-5 h-5 mr-3 text-[var(--color-secondary)] shrink-0 mt-0.5" />
-                <span>+91 90303 48383</span>
-              </div>
-              <div className="flex items-start text-white/80">
-                <Mail className="w-5 h-5 mr-3 text-[var(--color-secondary)] shrink-0 mt-0.5" />
-                <span>dinecodeahmedabad@gmail.com</span>
-              </div>
-              <div className="flex items-start text-white/80">
-                <MapPin className="w-5 h-5 mr-3 text-[var(--color-secondary)] shrink-0 mt-0.5" />
-                <span>DineCode, Money Plant High Street, A-531, Jagatpur Rd, nr. BSNL Office, Gota, Ahmedabad, Gujarat 382470</span>
-              </div>
-            </div>
+      {/* ── LEFT IMAGE ── */}
+      <div
+        className="absolute top-0 left-[-2px] pointer-events-none z-0 md:block"
+        style={{
+          width: "18vw",
+          bottom: "4.5vw",
+          backgroundImage: "url('/assets/footer.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "left bottom",
+          backgroundRepeat: "no-repeat",
+          mixBlendMode: "screen",
+          maskImage:
+            "linear-gradient(to right, rgba(0,0,0,1) 30%, rgba(0,0,0,0.9) 65%, rgba(0,0,0,0.3) 70%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to right, rgba(0,0,0,1) 30%, rgba(0,0,0,0.9) 65%, rgba(0,0,0,0.3) 70%, transparent 100%)",
+          opacity: 0.75,
+        }}
+      />
 
-            <div className="flex space-x-4 pt-2 justify-center sm:justify-start">
-              <a href="#" className="w-10 h-10 rounded bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[var(--color-secondary)] hover:border-[var(--color-secondary)] transition-all">
-                <FaInstagram className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[var(--color-secondary)] hover:border-[var(--color-secondary)] transition-all">
-                <FaFacebook className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[var(--color-secondary)] hover:border-[var(--color-secondary)] transition-all">
-                <FaTwitter className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
+      {/* ── RIGHT IMAGE ── */}
+      <div
+        className="absolute -top-16 bottom-0 right-0 pointer-events-none z-0 hidden lg:block"
+        style={{
+          width: "clamp(240px, 18vw, 380px)",
+          height: "24vw",
+          backgroundImage: "url('/assets/footer2.png')",
+          backgroundSize: "contain",
+          backgroundPosition: "right center",
+          backgroundRepeat: "no-repeat",
+          mixBlendMode: "screen",
+          maskImage:
+            "linear-gradient(to left, rgba(0,0,0,1) 50%, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0.3) 75%, transparent 100%), linear-gradient(to top, rgba(0,0,0,1) 20%, transparent 80%)",
+          WebkitMaskImage:
+            "linear-gradient(to left, rgba(0,0,0,1) 30%, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0.3) 75%, transparent 100%), linear-gradient(to top, rgba(0,0,0,1) 20%, transparent 80%)",
+          maskComposite: "intersect",
+          WebkitMaskComposite: "source-in",
+          opacity: 0.65,
+        }}
+      />
 
-          {/* Quick Links + Popular Areas — side-by-side on mobile, separate columns on sm+ */}
-          <div className="grid grid-cols-2 sm:contents gap-6">
-            {/* Quick Links */}
-            <div className="xl:pl-16">
-              <h3 className="text-lg font-semibold mb-6 font-playfair tracking-wide">Quick Links</h3>
-              <ul className="space-y-4">
-                {[
-                  { name: "About Us", href: "/about" },
-                  { name: "Contact", href: "/contact" },
-                  { name: "Blog", href: "/blog" },
-                  { name: "Add Restaurant", href: "#" },
-                  { name: "Privacy Policy", href: "/privacypolicy" },
-                  { name: "Terms of Service", href: "/termsofservice" }
-                ].map((item) => (
-                  <li key={item.name}>
-                    <Link href={item.href} className="text-white/80 hover:text-[var(--color-secondary)] transition-colors text-sm sm:text-base">
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+      {/* Floating gold particles */}
+      <div className="absolute bottom-6 left-[22%] w-[3px] h-[3px] rounded-full bg-[#D4AF37]/25 blur-[1px] animate-pulse pointer-events-none" />
+      <div className="absolute bottom-4 left-[54%] w-[2px] h-[2px] rounded-full bg-[#E7C56A]/20 blur-[1px] animate-pulse pointer-events-none" style={{ animationDelay: "1.5s" }} />
+      <div className="absolute bottom-8 right-[38%] w-[2px] h-[2px] rounded-full bg-[#D4AF37]/18 blur-[1px] animate-pulse pointer-events-none" style={{ animationDelay: "2.8s" }} />
 
-            {/* Popular Areas */}
-            <div className="xl:pl-14">
-              <h3 className="text-lg font-semibold mb-6 font-playfair tracking-wide">Popular Areas</h3>
-              <ul className="space-y-4">
-                {["SG Highway", "Sindhu Bhavan", "Bodakdev", "Satellite", "CG Road", "Prahlad Nagar"].map((item) => (
-                  <li key={item}>
-                    <Link href="#" className="text-white/80 hover:text-[var(--color-secondary)] transition-colors text-sm sm:text-base">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+      {/* ══ MAIN CONTENT ══ */}
+      <div
+        className="relative z-10 w-full"
+        style={{ padding: "clamp(30px, 2.5vw, 80px) clamp(24px, 5vw, 140px) 0 clamp(24px, 5vw, 150px)" }}
+      >
+        {/* ── RESPONSIVE GRID: Stacks on mobile, 2-column on tablet, custom on desktop ── */}
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.5fr_3fr_1.5fr] gap-10 lg:gap-0 items-start"
+          style={{
+            columnGap: "clamp(20px, 3.5vw, 70px)",
+          }}
+        >
 
-          {/* Newsletter */}
-          <div className="bg-luxury-gold rounded-2xl md:rounded-[24px] p-5 md:p-6 text-deep-navy shadow-lg mt-0 sm:col-span-2 xl:col-span-1">
-            <h3 className="text-lg font-semibold mb-4 font-playfair tracking-wide">Newsletter</h3>
-            <p className="text-deep-navy/80 mb-6 text-sm">
-              Subscribe to get exclusive offers and recommendations.
-            </p>
-            <form className="space-y-3">
-              <div className="relative">
-                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-deep-navy/60" />
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  className="w-full bg-white/20 border border-white/30 rounded-full py-3 pl-12 pr-4 text-deep-navy placeholder-deep-navy/60 focus:outline-none focus:border-white transition-colors text-sm"
+          {/* COL 1 — Brand */}
+          <div
+            className="flex flex-col items-center lg:items-start text-center lg:text-left md:col-span-1 pl-0 lg:pl-[4.5vw]"
+            style={{ gap: "0.25vw", paddingBottom: "0.24vw" }}
+          >
+            <div className="flex flex-col items-center lg:items-start pl-0 lg:pl-[4.5vw]" style={{ gap: "0.25vw" }}>
+              <Link href="/" className="inline-block hover:opacity-80 transition-opacity duration-200 mx-auto">
+                <Image
+                  src="/assets/logo1.png"
+                  alt="DINECODE"
+                  width={188}
+                  height={40}
+                  style={{
+                    height: "3.5vw",
+                    width: "auto",
+                    maxWidth: "15vw",
+                    minHeight: "44px",
+                    marginBottom: "0.5vw",
+                  }}
+                  className="object-contain"
+                  priority
                 />
+              </Link>
+
+              <p
+                style={{
+                  color: "#D4AF37",
+                  fontSize: "clamp(10px, 0.78vw, 20px)",
+                  letterSpacing: "0.10em",
+                  textTransform: "uppercase",
+                  fontWeight: 200,
+                  fontFamily: "var(--font-playfair, serif)",
+                  whiteSpace: "nowrap",
+                  marginBottom: "0.2vw",
+                  textAlign: "center",
+                }}
+              >
+                Ahmedabad's Luxury Dining Guide
+              </p>
+
+              <div 
+                className="flex items-center justify-center w-full animate-fade-in" 
+                style={{ 
+                  gap: "0.4vw", 
+                  marginBottom: "0.2vw",
+                }}
+              >
+                <span style={{ height: "1px", width: "3vw", background: "rgba(212,175,55,0.30)", display: "inline-block" }} />
+                <span style={{ color: "#D4AF37", fontSize: "clamp(8px, 0.6vw, 15px)", lineHeight: 1 }}>✦</span>
+                <span style={{ height: "1px", width: "3vw", background: "rgba(212,175,55,0.30)", display: "inline-block" }} />
               </div>
-              <Button className="w-full bg-deep-navy text-white hover:bg-deep-navy/90 border-none shadow-none text-sm h-11">
-                Subscribe <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </form>
+            </div>
+
+            <p
+              className="pl-4 lg:-pr-[4.5vw]"
+              style={{
+                color: "rgba(245,241,232,0.66)",
+                fontSize: "clamp(13.5px, 0.98vw, 20px)",
+                fontWeight: 300,
+                lineHeight: 1.78,
+                maxWidth: "18vw",
+                textAlign: "center",
+                padding:"4px"
+              }}
+            >
+              Your guide to Ahmedabad's finest dining destinations, luxury cafés and curated culinary experiences.
+            </p>
           </div>
+
+          {/* COL 2 — 3 link sections (stacks on mobile, side-by-side on tablet/desktop) */}
+          <div
+            className="flex flex-col sm:flex-row flex-wrap justify-between w-full lg:justify-center md:col-span-1"
+            style={{ gap: "clamp(12px, 2.5vw, 85px)", paddingRight: "2vw" }}
+          >
+            <FooterCol title="Quick Links">
+              {[
+                { label: "About Us",     href: "/about" },
+                { label: "Restaurants",  href: "/discover" },
+                { label: "Luxury Cafés", href: "/discover" },
+                { label: "Collections",  href: "/discover" },
+                { label: "Events",       href: "#" },
+                { label: "Blog",         href: "/blog" },
+                { label: "Contact",      href: "/contact" },
+              ].map(({ label, href }) => (
+                <FooterLink key={label} href={href}>{label}</FooterLink>
+              ))}
+            </FooterCol>
+
+            <FooterCol title="Resources">
+              {[
+                { label: "Advertise With Us", href: "#" },
+                { label: "Privacy Policy",    href: "/privacypolicy" },
+                { label: "Terms of Service",  href: "/termsofservice" },
+                { label: "Sitemap",           href: "#" },
+                { label: "Refund Policy",     href: "#" },
+                { label: "Careers",           href: "#" },
+              ].map(({ label, href }) => (
+                <FooterLink key={label} href={href}>{label}</FooterLink>
+              ))}
+            </FooterCol>
+
+            <FooterCol title="Popular Areas">
+              {["SG Highway", "Sindhu Bhavan", "Bodakdev", "Satellite", "CG Road", "Prahlad Nagar"].map((area) => (
+                <FooterLink key={area} href="/discover">{area}</FooterLink>
+              ))}
+            </FooterCol>
+          </div>
+
+          {/* COL 3 — Newsletter card */}
+          <div
+            className="flex flex-col w-full md:col-span-2 lg:col-span-1 items-center lg:items-start"
+            style={{ paddingRight: "clamp(0px, 5.5vw, 80px)" }}
+          >
+            <div
+              className="w-full max-w-[400px] lg:max-w-none rounded-[18px] flex flex-col transition-shadow duration-250 hover:shadow-[0_0_22px_rgba(212,175,55,0.09)] ml-0 lg:-ml-[3vw]"
+              style={{
+                background: "rgba(255,255,255,0.03)",
+                border: "1px solid rgba(212,175,55,0.22)",
+                backdropFilter: "blur(12px)",
+                WebkitBackdropFilter: "blur(12px)",
+                padding: "clamp(16px, 1.1vw, 28px)",
+                gap: "0.8vw",
+              }}
+            >
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.5vw" }}>
+                <h4
+                  style={{
+                    color: "#D4AF37",
+                    fontSize: "clamp(10px, 0.74vw, 19px)",
+                    fontWeight: 700,
+                    letterSpacing: "0.22em",
+                    textTransform: "uppercase",
+                    fontFamily: "var(--font-playfair, serif)",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  Let's Stay Connected
+                </h4>
+                <p
+                  style={{
+                    color: "rgba(245,241,232,0.66)",
+                    fontSize: "clamp(11.5px, 0.78vw, 20px)",
+                    fontWeight: 300,
+                    lineHeight: 1.7,
+                    marginBottom: "0.2vw",
+                  }}
+                >
+                  Get curated recommendations and exclusive dining updates.
+                </p>
+              </div>
+              <NewsletterForm />
+            </div>
+          </div>
+
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col items-center md:flex-row md:justify-between text-sm text-white/80 text-center gap-2">
-          <p>© {new Date().getFullYear()} DINECODE. All rights reserved.</p>
-          <div className="flex items-center space-x-2 mt-4 md:mt-0">
-            <span>Made with luxury in mind.</span>
-          </div>
+        {/* ── BOTTOM BAR ── */}
+        <div
+          className="flex flex-col sm:flex-row items-center justify-between w-full gap-4 sm:gap-0"
+          style={{
+            borderTop: "1px solid rgba(212,175,55,0.16)",
+            marginTop: "2vw",
+            paddingTop: "1vw",
+            paddingBottom: "1.2vw",
+            color: "rgba(245,241,232,0.46)",
+            fontWeight: 300,
+          }}
+        >
+          <span style={{ fontSize: "clamp(11.5px, 0.72vw, 18px)" }}>© 2026 DINECODE.</span>
+          <span
+            className="hover:text-[#D4AF37] transition-colors duration-250 cursor-default"
+            style={{ fontSize: "clamp(11.5px, 0.72vw, 18px)" }}
+          >
+            Managed by Ft Nexavvy
+          </span>
         </div>
+
       </div>
     </footer>
+  );
+}
+
+/* ─── Sub-components with vw-scaled sizing ─── */
+
+function FooterCol({ title, children }) {
+  return (
+    <div className="flex flex-col shrink-0 min-w-[120px]" style={{ gap: "0.85vw" }}>
+      <h3
+        style={{
+          color: "#D4AF37",
+          fontSize: "clamp(11px, 0.74vw, 19px)",
+          fontWeight: 700,
+          letterSpacing: "0.22em",
+          textTransform: "uppercase",
+          whiteSpace: "nowrap",
+          fontFamily: "var(--font-playfair, serif)",
+        }}
+      >
+        {title}
+      </h3>
+      <ul className="flex flex-col" style={{ gap: "0.55vw" }}>
+        {children}
+      </ul>
+    </div>
+  );
+}
+
+function FooterLink({ href, children }) {
+  return (
+    <li>
+      <Link
+        href={href}
+        className="group inline-flex items-center transition-all duration-250 ease-in-out"
+        style={{
+          fontSize: "clamp(12px, 0.78vw, 20px)",
+          fontWeight: 300,
+          color: "rgba(245,241,232,0.66)",
+          gap: "0.35vw",
+          textDecoration: "none",
+        }}
+      >
+        <span
+          className="shrink-0 font-bold transition-transform duration-250 ease-in-out group-hover:translate-x-[3px]"
+          style={{ color: "#D4AF37", fontSize: "clamp(9px, 0.6vw, 15px)", lineHeight: 1 }}
+        >
+          ›
+        </span>
+        <span className="relative" style={{ whiteSpace: "nowrap" }}>
+          <span className="group-hover:text-[#E7C56A] transition-colors duration-250">
+            {children}
+          </span>
+          <span className="absolute left-0 -bottom-[1px] h-[1px] w-0 bg-[#D4AF37] transition-all duration-250 ease-in-out group-hover:w-full" />
+        </span>
+      </Link>
+    </li>
   );
 }

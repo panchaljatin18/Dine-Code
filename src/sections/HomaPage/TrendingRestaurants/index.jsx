@@ -66,7 +66,13 @@ export default function TrendingRestaurants() {
       <div ref={sectionRef} id="sectionPin">
         <section className="min-h-screen overflow-hidden bg-[var(--color-primary)] flex flex-col justify-center ">
           {/* Header */}
-          <div className="w-full z-10 mb-6 md:mb-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="w-full z-10 mb-6 md:mb-10"
+          >
             <div className="luxury-container w-full">
               <div className="flex flex-row justify-between items-end">
                 <div>
@@ -85,10 +91,16 @@ export default function TrendingRestaurants() {
                 </Link>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Horizontally sliding cards row */}
-          <div className="w-full overflow-x-auto lg:overflow-x-hidden scrollbar-hide scroll-smooth snap-x snap-mandatory pt-6 pb-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
+            className="w-full overflow-x-auto lg:overflow-x-hidden scrollbar-hide scroll-smooth snap-x snap-mandatory pt-6 pb-10"
+          >
             <div
               ref={pinWrapRef}
               className="pin-wrap flex justify-start items-center w-max carousel-align-left pr-[10vw]"
@@ -160,7 +172,7 @@ export default function TrendingRestaurants() {
               {/* trailing spacer */}
               <div className="w-[5vw] shrink-0" />
             </div>
-          </div>
+          </motion.div>
         </section>
       </div>
 
